@@ -1,0 +1,25 @@
+[package]
+name = "bliss_audio"
+version = "0.1.7"
+authors = ["Polochon-street <polochonstreet@gmx.fr>"]
+edition = "2021"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = [
+    "bliss-audio/build-ffmpeg",
+    "bliss-audio/default",
+    "time/macros",
+]
+
+[dependencies]
+maturin = "0.14.0"
+bliss-audio = "0.6.6"
+time = "0.3.19"
+
+[dependencies.pyo3]
+version = "0.18.1"
