@@ -1,7 +1,26 @@
+[project]
+name = "bliss-audio_polochon_street"
+version = "0.1.9"
+authors = [
+  { name="Polochon_street", email="polochonstreet@gmx.feature" },
+]
+description = "A package containing helpers to make audio playlists."
+readme = "README_pypi.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/Polochon-street/bliss-python"
+Issues = "https://github.com/Polochon-street/bliss-python/issues"
+
 [build-system]
 requires = ["maturin>=0.10"]
 build-backend = "maturin"
 
 [tool.maturin]
 # "extension-module" tells pyo3 we want to build an extension module (skips linking against libpython.so)
-features = ["pyo3/extension-module"]
+features = ["pyo3/extension-module"
