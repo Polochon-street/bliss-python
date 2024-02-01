@@ -34,6 +34,11 @@ impl Song {
     }
 
     #[getter]
+    fn duration(&self) -> f64 {
+        self.inner.duration.to_owned().as_secs_f64()
+    }
+
+    #[getter]
     fn track_number(&self) -> Option<String> {
         self.inner.track_number.to_owned()
     }
