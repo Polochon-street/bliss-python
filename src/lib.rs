@@ -1,8 +1,11 @@
 extern crate bliss_audio as original_bliss;
 use original_bliss::AnalysisIndex;
 use original_bliss::Song as BlissSong;
+use original_bliss::decoder::ffmpeg::FFmpegDecoder as Decoder;
+use original_bliss::decoder::Decoder as DecoderTrait;
 use pyo3::prelude::*;
 use std::collections::HashMap;
+use std::path::Path;
 
 #[pyclass]
 pub struct Song {
@@ -156,7 +159,7 @@ impl Song {
     #[new]
     fn new(path: &str) -> Self {
         Song {
-            inner: BlissSong::from_path(path).unwrap(),
+            inner: Decoder::song_from_path(Path::new(path)).unwrap(),
         }
     }
 }
