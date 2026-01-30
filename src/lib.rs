@@ -44,6 +44,11 @@ impl Song {
     }
 
     #[getter]
+    fn disc_number(&self) -> Option<i32> {
+        self.inner.disc_number.to_owned()
+    }
+
+    #[getter]
     fn genre(&self) -> Option<String> {
         self.inner.genre.to_owned()
     }
