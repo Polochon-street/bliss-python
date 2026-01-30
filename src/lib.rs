@@ -138,6 +138,18 @@ impl Song {
                 String::from("chroma10"),
                 self.inner.analysis[AnalysisIndex::Chroma10],
             ),
+            (
+                String::from("chroma11"),
+                self.inner.analysis[AnalysisIndex::Chroma11],
+            ),
+            (
+                String::from("chroma12"),
+                self.inner.analysis[AnalysisIndex::Chroma12],
+            ),
+            (
+                String::from("chroma13"),
+                self.inner.analysis[AnalysisIndex::Chroma13],
+            ),
         ])
     }
 
