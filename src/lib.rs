@@ -39,7 +39,7 @@ impl Song {
     }
 
     #[getter]
-    fn track_number(&self) -> Option<String> {
+    fn track_number(&self) -> Option<i32> {
         self.inner.track_number.to_owned()
     }
 
