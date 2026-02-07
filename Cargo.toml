@@ -1,6 +1,6 @@
 [package]
 name = "bliss_audio"
-version = "0.1.10"
+version = "0.2.0"
 authors = ["Polochon-street <polochonstreet@gmx.fr>"]
 edition = "2021"
 readme = "README.md"
