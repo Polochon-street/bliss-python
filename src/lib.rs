@@ -1,8 +1,11 @@
 extern crate bliss_audio as original_bliss;
 use original_bliss::AnalysisIndex;
 use original_bliss::Song as BlissSong;
+use original_bliss::decoder::ffmpeg::FFmpegDecoder as Decoder;
+use original_bliss::decoder::Decoder as DecoderTrait;
 use pyo3::prelude::*;
 use std::collections::HashMap;
+use std::path::Path;
 
 #[pyclass]
 pub struct Song {
@@ -39,8 +42,13 @@ impl Song {
     }
 
     #[getter]
-    fn track_number(&self) -> Option<String> {
+    fn track_number(&self) -> Option<i32> {
         self.inner.track_number.to_owned()
+    }
+
+    #[getter]
+    fn disc_number(&self) -> Option<i32> {
+        self.inner.disc_number.to_owned()
     }
 
     #[getter]
@@ -133,13 +141,25 @@ impl Song {
                 String::from("chroma10"),
                 self.inner.analysis[AnalysisIndex::Chroma10],
             ),
+            (
+                String::from("chroma11"),
+                self.inner.analysis[AnalysisIndex::Chroma11],
+            ),
+            (
+                String::from("chroma12"),
+                self.inner.analysis[AnalysisIndex::Chroma12],
+            ),
+            (
+                String::from("chroma13"),
+                self.inner.analysis[AnalysisIndex::Chroma13],
+            ),
         ])
     }
 
     #[new]
     fn new(path: &str) -> Self {
         Song {
-            inner: BlissSong::from_path(path).unwrap(),
+            inner: Decoder::song_from_path(Path::new(path)).unwrap(),
         }
     }
 }
