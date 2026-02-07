@@ -165,7 +165,7 @@ impl Song {
 }
 
 #[pymodule]
-fn bliss_audio(_py: Python, m: &PyModule) -> PyResult<()> {
+fn bliss_audio(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<Song>()?;
 
     Ok(())
