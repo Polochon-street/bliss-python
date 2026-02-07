@@ -1,6 +1,6 @@
 [package]
 name = "bliss_audio"
-version = "0.1.10"
+version = "0.2.0"
 authors = ["Polochon-street <polochonstreet@gmx.fr>"]
 edition = "2021"
 readme = "README.md"
@@ -17,9 +17,9 @@ default = [
 ]
 
 [dependencies]
-maturin = "0.14.0"
-bliss-audio = "0.6.6"
+maturin = "1.11.5"
+bliss-audio = "0.11.2"
 time = "0.3.19"
 
 [dependencies.pyo3]
-version = "0.18.1"
+version = "0.28.0"
